@@ -117,13 +117,7 @@ public class Game
        return  true;
    }
 
-
-
-
-
-
-
-    private boolean areEquele(Cell... cells)
+   private boolean areEquele(Cell... cells)
     {
         //check for 3 cases
            //case 1- "object cells is empty
@@ -159,6 +153,22 @@ public class Game
         return true;
     }
 
+
+
+    public  void switchPlayer()
+    {
+        currentPlayer=(currentPlayer == player1) ? player2 :player1;
+    }
+
+    
+    public void reset()
+    {
+        player1=null;
+        player2=null;
+        currentPlayer=null;
+
+        cells=null;
+    }
 
 
 }
