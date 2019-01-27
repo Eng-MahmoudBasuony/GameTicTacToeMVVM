@@ -6,7 +6,7 @@ import android.util.Log;
 import mymobileapp.code.mbasuony.gametictactoe_mvvm.utilitys.StringUtility;
 
 
-//----------------------------------Business Logic code----------------------------//
+//---------------------------------- state and Business Logic code----------------------------//
 public class Game
 {
 
