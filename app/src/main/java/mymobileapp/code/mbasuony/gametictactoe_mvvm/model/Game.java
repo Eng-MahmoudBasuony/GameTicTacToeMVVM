@@ -86,6 +86,27 @@ public class Game
     }
 
 
+    public  boolean threeSameDiagonalCells()
+    {
+        try
+        {
+            for (int i=0;i<BOARD_SIZE;i++)
+            {
+                if (areEquele(cell[0][0],cell[1][1],cell[2][2])||areEquele(cell[0][2],cell[1][1],cell[2][0]))
+                    return true;
+            }
+
+            return false;
+        }
+        catch (NullPointerException e)
+        {
+            Log.e(TAG, "threeSameDiagonalCells: "+e.getMessage() );
+            return false;
+        }
+
+    }
+
+
 
 
 
