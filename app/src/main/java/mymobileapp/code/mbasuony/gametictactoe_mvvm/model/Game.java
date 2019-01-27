@@ -160,7 +160,7 @@ public class Game
         currentPlayer=(currentPlayer == player1) ? player2 :player1;
     }
 
-    
+
     public void reset()
     {
         player1=null;
