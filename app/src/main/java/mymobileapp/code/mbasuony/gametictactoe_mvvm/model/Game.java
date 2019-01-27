@@ -1,6 +1,7 @@
 package mymobileapp.code.mbasuony.gametictactoe_mvvm.model;
 
 import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
 
 import java.util.IllegalFormatCodePointException;
 
@@ -33,10 +34,63 @@ public class Game
 
     }
 
-    //The game ended in three cases
+    //The game ended in 4 cases
        //1-  "3cell identical Horizontal"
        //2-  "3cell identical Vertical"
        //3-  "3cell identical Diagonal"
+       //4-   "is Board Full"
+
+
+    public boolean threeSameHorizontalCells()
+    {
+        try
+        {
+            for (int i=0;i<BOARD_SIZE;i++)
+            {
+                if (areEquele(cell[i][0],cell[i][1],cell[i][2]))
+                    return true;
+
+            }
+
+         return false;
+
+        }catch (NullPointerException e)
+        {
+            Log.e(TAG, "threeSameHorizontalCells: "+e.getMessage() );
+            return false;
+        }
+
+
+    }
+
+    public boolean threeSameVerticalCells()
+    {
+        try
+        {
+            for (int i=0;i<BOARD_SIZE;i++)
+            {
+
+                if (areEquele(cell[0][i],cell[1][i],cell[2][i]))
+                     return true;
+
+            }
+
+            return false;
+
+        }catch (NullPointerException e)
+        {
+            Log.e(TAG, "threeSameVerticalCells: "+e.getMessage() );
+            return false;
+        }
+
+    }
+
+
+
+
+
+
+
 
 
     private boolean areEquele(Cell... cells)
