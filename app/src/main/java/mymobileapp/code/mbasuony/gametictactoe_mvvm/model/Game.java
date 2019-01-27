@@ -3,8 +3,6 @@ package mymobileapp.code.mbasuony.gametictactoe_mvvm.model;
 import android.arch.lifecycle.MutableLiveData;
 import android.util.Log;
 
-import java.util.IllegalFormatCodePointException;
-
 import mymobileapp.code.mbasuony.gametictactoe_mvvm.utilitys.StringUtility;
 
 public class Game
@@ -18,14 +16,14 @@ public class Game
     public Player player2;
     public Player currentPlayer=player1;
 
-    public Cell[][] cell;
+    public Cell[][] cells;
 
     public MutableLiveData<Player> winner = new MutableLiveData<>();
 
     public Game(String playerOne, String playerTwo)
     {
 
-        cell=new Cell[BOARD_SIZE][BOARD_SIZE];
+        cells =new Cell[BOARD_SIZE][BOARD_SIZE];
 
       player1=new Player(playerOne,"X");
       player2=new Player(playerTwo,"O");
@@ -40,14 +38,13 @@ public class Game
        //3-  "3cell identical Diagonal"
        //4-   "is Board Full"
 
-
     public boolean threeSameHorizontalCells()
     {
         try
         {
             for (int i=0;i<BOARD_SIZE;i++)
             {
-                if (areEquele(cell[i][0],cell[i][1],cell[i][2]))
+                if (areEquele(cells[i][0], cells[i][1], cells[i][2]))
                     return true;
 
             }
@@ -70,7 +67,7 @@ public class Game
             for (int i=0;i<BOARD_SIZE;i++)
             {
 
-                if (areEquele(cell[0][i],cell[1][i],cell[2][i]))
+                if (areEquele(cells[0][i], cells[1][i], cells[2][i]))
                      return true;
 
             }
@@ -85,14 +82,14 @@ public class Game
 
     }
 
-
     public  boolean threeSameDiagonalCells()
     {
         try
         {
             for (int i=0;i<BOARD_SIZE;i++)
             {
-                if (areEquele(cell[0][0],cell[1][1],cell[2][2])||areEquele(cell[0][2],cell[1][1],cell[2][0]))
+                if ( areEquele(cells[0][0], cells[1][1], cells[2][2]) ||
+                     areEquele(cells[0][2], cells[1][1], cells[2][0]))
                     return true;
             }
 
@@ -106,7 +103,19 @@ public class Game
 
     }
 
+   public  boolean isBoardFull()
+   {
+       for (Cell[]row: cells)
+       {
+             for (Cell cell: row)
+             {
+                 if (cell==null||cell.isEmpty())
+                     return false;
+             }
+       }
 
+       return  true;
+   }
 
 
 
