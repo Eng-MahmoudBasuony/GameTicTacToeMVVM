@@ -2,6 +2,7 @@ package mymobileapp.code.mbasuony.gametictactoe_mvvm.model;
 
 import android.renderscript.Sampler;
 
+//Data
 public class Player
 {
 

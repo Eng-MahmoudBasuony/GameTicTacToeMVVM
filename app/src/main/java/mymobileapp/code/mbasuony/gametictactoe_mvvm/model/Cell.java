@@ -2,6 +2,7 @@ package mymobileapp.code.mbasuony.gametictactoe_mvvm.model;
 
 import mymobileapp.code.mbasuony.gametictactoe_mvvm.utilitys.StringUtility;
 
+//Data
 //Has a single attribute, a player instance.
 public class Cell
 {

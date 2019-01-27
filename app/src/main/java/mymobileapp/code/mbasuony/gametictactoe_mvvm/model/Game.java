@@ -163,6 +163,7 @@ public class Game
     }
 
 
+    //Finally, once a game ends, all attributes related to this game instance should be re-initialized.
     public void reset()
     {
         player1=null;
