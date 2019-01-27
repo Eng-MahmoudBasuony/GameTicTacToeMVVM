@@ -5,6 +5,8 @@ import android.util.Log;
 
 import mymobileapp.code.mbasuony.gametictactoe_mvvm.utilitys.StringUtility;
 
+
+//----------------------------------Business Logic code----------------------------//
 public class Game
 {
 
@@ -168,6 +170,24 @@ public class Game
         currentPlayer=null;
 
         cells=null;
+    }
+
+    //-------Check Has ended Game-------------//
+    public boolean hasEndedGame()
+    {
+        if (threeSameHorizontalCells()||threeSameVerticalCells()||threeSameDiagonalCells())
+        {
+            winner.setValue(currentPlayer);
+            return true;
+        }
+
+        if (isBoardFull())
+        {
+            winner.setValue(null);
+            return true;
+        }
+
+             return false;
     }
 
 
