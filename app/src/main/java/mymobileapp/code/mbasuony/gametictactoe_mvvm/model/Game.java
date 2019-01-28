@@ -119,6 +119,7 @@ public class Game
        return  true;
    }
 
+   //Check for cell
    private boolean areEquele(Cell... cells)
     {
         //check for 3 cases
@@ -143,7 +144,8 @@ public class Game
 
         for (int i=1;i<cells.length;i++)
         {
-            if (comparisonBase.player.value.equals(cells[i].player.value));
+            if (!comparisonBase.player.value.equals(cells[i].player.value));
+                   return false;
 
         }
 
